@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+  </head>
+  <body>
+    {% include "navbaradmin.html" %}
+    <br>
+    <br>
+
+<h3 class="p-3 mb-2 bg-success text-white" style = 'font-size: 30px;text-align:center;'>Book Added Successfully!</h3>
+<br><br>
+<form method="POST" class="post-form" action="/update/{{Book.id}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Book Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{book.name}}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">ISBN:</label>
+    <div class="col-sm-4">
+        <input type="text" name="ename" id="id_ename" required maxlength="100" value="{{book.isbn}}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Author:</label>
+    <div class="col-sm-4">
+        <input type="email" name="eemail" id="id_eemail" required maxlength="254" value="{{book.author}}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Category:</label>
+    <div class="col-sm-4">
+        <input type="text" name="econtact" id="id_econtact" required maxlength="15" value="{{book.category}}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>
